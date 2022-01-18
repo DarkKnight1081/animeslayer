@@ -15,7 +15,7 @@ var gameData = {
       gameData.FantasyCoinPerClick += 1
       gameData.FantasyCoinPerClickCost *= 2
       document.getElementById("FantasyCoinCollected").innerHTML = gameData.FantasyCoin + " Fantasy Coin Collected"
-      document.getElementById("perClickUpgrade").innerHTML = "Upgrade Power (Currently Level " + gameData.FantasyCoinPerClick + ") Cost: " + gameData.FantasyCoinPerClickCost + " Fantasy Coin"
+      document.getElementById("perClickUpgrade").innerHTML = "Upgrade Power (Level " + gameData.FantasyCoinPerClick + ") Cost: " + gameData.FantasyCoinPerClickCost + " Fantasy Coin"
     }
   }
 
@@ -25,4 +25,9 @@ var gameData = {
 
   var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("AnimeSlayerSave", JSON.stringify(gameData))
-  }, 1500)
+  }, 150)
+
+  var savegame = JSON.parse(localStorage.getItem("AnimeSlayerSave"))
+if (savegame !== null) {
+  gameData = savegame
+}
