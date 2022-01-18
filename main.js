@@ -30,4 +30,6 @@ var gameData = {
   var savegame = JSON.parse(localStorage.getItem("AnimeSlayerSave"))
 if (savegame !== null) {
   gameData = savegame
+  document.getElementById("FantasyCoinCollected").innerHTML = gameData.FantasyCoin + " Fantasy Coin Collected"
+  document.getElementById("perClickUpgrade").innerHTML = "Upgrade Power (Level " + gameData.FantasyCoinPerClick + ") Cost: " + gameData.FantasyCoinPerClickCost + " Fantasy Coin"
 }
